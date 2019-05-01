@@ -3,14 +3,24 @@ var blazorVirtualScrolling = {
 
         ref.addEventListener("scroll",
             (e) => {
-                console.log(e);
-
-                if (e.srcElement === ref) {
-                    cmp.invokeMethodAsync("VirtualScrollingSetView", blazorVirtualScrolling.getScrollView(ref))
-                        .then(_ => {
+//                console.log(e);
+                cmp.invokeMethodAsync("VirtualScrollingSetView", blazorVirtualScrolling.getScrollView(ref))
+                    .then(_ => {
 //                        console.log(_);
-                        });
-                }
+                    });
+
+            });
+
+        window.addEventListener("resize",
+            (e) => {
+//                console.log(e);
+
+
+                cmp.invokeMethodAsync("VirtualScrollingSetView", blazorVirtualScrolling.getScrollView(ref))
+                    .then(_ => {
+//                        console.log(_);
+                    });
+
             });
         return blazorVirtualScrolling.getScrollView(ref);
 

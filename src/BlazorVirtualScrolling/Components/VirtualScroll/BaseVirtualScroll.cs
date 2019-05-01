@@ -17,7 +17,7 @@ namespace BlazorVirtualScrolling
         public string Style { get; set; }
 
         [Parameter]
-        public int RowHeight { get; set; } = 50;
+        public int ItemHeight { get; set; } = 50;
 
         public ElementRef Ref { get; set; }
 
@@ -56,10 +56,10 @@ namespace BlazorVirtualScrolling
         {
             this.ScrollView = scrollView;
             this.ScrollViewResult = new ScrollViewResult();
-            this.ScrollViewResult.Height = Items.Count() * RowHeight;
-            this.ScrollViewResult.SkipItems = scrollView.ScrollTop / this.RowHeight;
-            this.ScrollViewResult.TakeItems = (int)Math.Ceiling((double)(scrollView.ScrollTop + scrollView.ClientHeight) / (double)RowHeight) - this.ScrollViewResult.SkipItems;
-            Console.WriteLine(ScrollViewResult.SkipItems + " " + ScrollViewResult.TakeItems);
+            this.ScrollViewResult.Height = Items.Count() * ItemHeight;
+            this.ScrollViewResult.SkipItems = scrollView.ScrollTop / this.ItemHeight;
+            this.ScrollViewResult.TakeItems = (int)Math.Ceiling((double)(scrollView.ScrollTop + scrollView.ClientHeight) / (double)ItemHeight) - this.ScrollViewResult.SkipItems;
+//            Console.WriteLine(ScrollViewResult.SkipItems + " " + ScrollViewResult.TakeItems);
             this.StateHasChanged();
         }
 

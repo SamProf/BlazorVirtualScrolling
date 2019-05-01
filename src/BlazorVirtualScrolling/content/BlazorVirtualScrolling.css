@@ -12,4 +12,5 @@
 
 .blazor-virtual-scroll-item {
     position: absolute;
+    overflow: hidden;
 }

@@ -13,7 +13,7 @@
            
              @foreach (var item in Items.Skip(ScrollViewResult.SkipItems).Take(ScrollViewResult.TakeItems).Select((item, index)=>new {item, index}))
              {
-                 <div style="height: @(RowHeight)px; top: @((ScrollViewResult.SkipItems + item.index) * RowHeight)px;" class="blazor-virtual-scroll-item">
+                 <div style="height: @(ItemHeight)px; top: @((ScrollViewResult.SkipItems + item.index) * ItemHeight)px;" class="blazor-virtual-scroll-item">
                      @ChildContent(item.item)
                  </div>
              }
@@ -24,14 +24,7 @@
 @functions
 {
 
-    void Test1()
-    {
-        Console.WriteLine("Scroll");
-    }
+  
 
-    private void Test1(UIEventArgs o)
-    {
-        Console.WriteLine(o.Type);
-    }
-
+   
 }
