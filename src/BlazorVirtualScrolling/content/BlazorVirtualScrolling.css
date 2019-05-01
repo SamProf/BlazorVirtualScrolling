@@ -1,0 +1,7 @@
+﻿.blazor-virtual-scroll {
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-content: stretch; */
+    overflow-y: auto;
+
+}

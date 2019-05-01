@@ -1,0 +1,11 @@
+﻿@typeparam ItemType
+@inherits BaseVirtualScroll<ItemType>
+
+<div class="@(Class) blazor-virtual-scroll" style="@Style" ref="Ref">
+    @foreach (var item in Items)
+    {
+        <div style="height: @(RowHeight)px">
+            @ChildContent(item)
+        </div>
+    }
+</div>

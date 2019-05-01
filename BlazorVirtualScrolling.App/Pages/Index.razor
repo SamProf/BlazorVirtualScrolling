@@ -1,0 +1,11 @@
+﻿@page "/"
+
+<VirtualScroll style="width: 500px; height: 500px;" ItemType="string" Items="@items">
+    <b>@context</b>
+</VirtualScroll>
+
+@functions
+{
+
+    public IEnumerable<string> items = Enumerable.Range(0, 10000).Select(i => i.ToString()).ToArray();
+}
