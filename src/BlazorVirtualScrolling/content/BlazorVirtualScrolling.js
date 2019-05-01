@@ -3,10 +3,14 @@ var blazorVirtualScrolling = {
 
         ref.addEventListener("scroll",
             (e) => {
-                cmp.invokeMethodAsync("VirtualScrollingSetView", blazorVirtualScrolling.getScrollView(ref))
-                    .then(_ => {
+                console.log(e);
+
+                if (e.srcElement === ref) {
+                    cmp.invokeMethodAsync("VirtualScrollingSetView", blazorVirtualScrolling.getScrollView(ref))
+                        .then(_ => {
 //                        console.log(_);
-                    });
+                        });
+                }
             });
         return blazorVirtualScrolling.getScrollView(ref);
 

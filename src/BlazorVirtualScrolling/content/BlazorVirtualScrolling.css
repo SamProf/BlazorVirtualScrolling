@@ -5,3 +5,11 @@
     overflow-y: auto;
 
 }
+
+.blazor-virtual-scroll-content {
+    position: relative;
+}
+
+.blazor-virtual-scroll-item {
+    position: absolute;
+}

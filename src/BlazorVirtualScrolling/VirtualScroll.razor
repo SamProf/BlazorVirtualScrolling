@@ -1,14 +1,22 @@
 ﻿@typeparam ItemType
 @using System
+@using System.Linq
 @using System.Runtime.InteropServices.ComTypes
 @using Microsoft.AspNetCore.Components
 @inherits BaseVirtualScroll<ItemType>
 
 <div class="@(Class) blazor-virtual-scroll" style="@Style" ref="Ref">
-    @foreach (var item in Items)
+    @if (ScrollViewResult != null)
     {
-        <div style="height: @(RowHeight)px">
-            @ChildContent(item)
+       
+        <div class="blazor-virtual-scroll-content" style="height: @(ScrollViewResult.Height)px">
+           
+             @foreach (var item in Items.Skip(ScrollViewResult.SkipItems).Take(ScrollViewResult.TakeItems).Select((item, index)=>new {item, index}))
+             {
+                 <div style="height: @(RowHeight)px; top: @((ScrollViewResult.SkipItems + item.index) * RowHeight)px;" class="blazor-virtual-scroll-item">
+                     @ChildContent(item.item)
+                 </div>
+             }
         </div>
     }
 </div>
@@ -23,7 +31,6 @@
 
     private void Test1(UIEventArgs o)
     {
-        
         Console.WriteLine(o.Type);
     }
 
