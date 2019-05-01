@@ -1,4 +1,7 @@
 ﻿@typeparam ItemType
+@using System
+@using System.Runtime.InteropServices.ComTypes
+@using Microsoft.AspNetCore.Components
 @inherits BaseVirtualScroll<ItemType>
 
 <div class="@(Class) blazor-virtual-scroll" style="@Style" ref="Ref">
@@ -9,3 +12,19 @@
         </div>
     }
 </div>
+
+@functions
+{
+
+    void Test1()
+    {
+        Console.WriteLine("Scroll");
+    }
+
+    private void Test1(UIEventArgs o)
+    {
+        
+        Console.WriteLine(o.Type);
+    }
+
+}
