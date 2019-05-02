@@ -1,0 +1,16 @@
+﻿.blazor-virtual-scroll {
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-content: stretch; */
+    overflow-y: auto;
+
+}
+
+.blazor-virtual-scroll-content {
+    position: relative;
+}
+
+.blazor-virtual-scroll-item {
+    position: absolute;
+    overflow: hidden;
+}

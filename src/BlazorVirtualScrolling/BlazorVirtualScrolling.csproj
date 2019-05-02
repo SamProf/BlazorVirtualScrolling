@@ -10,6 +10,18 @@
     <LangVersion>7.3</LangVersion>
     <RazorLangVersion>3.0</RazorLangVersion>
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Vladimir Samoilenko</Authors>
+    <Company>SamProf</Company>
+    <Description>The VirtualScroll displays large lists of elements performantly by only rendering the items that fit on-screen. Loading hundreds of elements can be slow in any browser; virtual scrolling enables a performant way to simulate all items being rendered by making the height of the container element the same as the height of total number of elements to be rendered, and then only rendering the items in view.
+</Description>
+    <Copyright>Vladimir Samoilenko</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/SamProf/BlazorVirtualScrolling</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/SamProf/BlazorVirtualScrolling</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>Blazor, Virtual, Scrolling</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
