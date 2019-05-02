@@ -5,7 +5,7 @@
 [![Gitter](https://badges.gitter.im/MatBlazor/community.svg)](https://gitter.im/MatBlazor/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![GitHub Stars](https://img.shields.io/github/stars/SamProf/BlazorVirtualScrolling.svg)](https://github.com/SamProf/BlazorVirtualScrolling/stargazers)
 [![GitHub Issues](https://img.shields.io/github/issues/SamProf/BlazorVirtualScrolling.svg)](https://github.com/SamProf/BlazorVirtualScrolling/issues)
-[![Live Demo](https://img.shields.io/badge/demo-online-green.svg)](https://www.matblazor.com)
+[![Live Demo](https://img.shields.io/badge/demo-online-green.svg)](https://samprof.github.io/BlazorVirtualScrolling/)
 [![MIT](https://img.shields.io/github/license/SamProf/BlazorVirtualScrolling.svg)](LICENSE)
 [![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9XT68N2VKWTPE&source=url)
 
@@ -13,7 +13,7 @@ The `VirtualScroll` displays large lists of elements performantly by only render
 
 
 ## Demo and Documentation
-- [MatBlazor documentation and demo website](https://www.matblazor.com)
+- [Documentation and demo](https://samprof.github.io/BlazorVirtualScrolling/)
 
 
 ## Prerequisites
