@@ -19,7 +19,7 @@ namespace BlazorVirtualScrolling
         [Parameter]
         public int ItemHeight { get; set; } = 50;
 
-        public ElementRef Ref { get; set; }
+        public ElementReference Ref { get; set; }
 
         [Parameter]
         public RenderFragment<ItemType> ChildContent { get; set; }
@@ -29,21 +29,18 @@ namespace BlazorVirtualScrolling
 
         [Inject]
         public IJSRuntime JsRuntime { get; set; }
-
-        private bool isFirstRender = true;
-
-        protected override async Task OnAfterRenderAsync()
+        
+        protected override async Task OnAfterRenderAsync(bool firstRender)
         {
-            await base.OnAfterRenderAsync();
-            if (isFirstRender)
+            await base.OnAfterRenderAsync(firstRender);
+            if (firstRender)
             {
                 this.JsHelper = new VirtualScrollJsHelper(this);
-                var scrollView = await JsRuntime.InvokeAsync<ScrollView>("blazorVirtualScrolling.init", Ref, new DotNetObjectRef(JsHelper));
-                this.SetScrollView(scrollView);
-                isFirstRender = false;
+                var scrollView = await JsRuntime.InvokeAsync<ScrollView>("blazorVirtualScrolling.init", Ref, DotNetObjectReference.Create(JsHelper));
+                this.SetScrollView(scrollView);                
             }
         }
-
+        
         public VirtualScrollJsHelper JsHelper { get; set; }
 
         public void VirtualScrollingSetView(ScrollView scrollView)
